@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal-Grade Laoongthip</title>
+    <script src="/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<style>
+    body{
+        background-color:bisque;
+        line-height: 1.5em;
+        text-align: center;
+    }
+    .container{
+        width: 85%;
+        background-color:beige;
+        margin: 0 auto;
+        border-radius: 35px;
+    }
+    h1{
+        padding: 30px 0 15px 0;
+        font-size: 2.5em;
+        color: tomato;
+    }
+    h2{
+        color: tomato;
+        font-size: 1.8em;
+        display: inline;
+    }
+    h3{
+        margin: 20px;
+    }
+    .subject,.score,.showgrade{
+        margin: 3px 25px;
+        padding: 5px;
+        display: inline;
+    }
+    #savg{
+        margin: 15px 0 30px 0;
+        font-size: 15px;
+    }
+    .showgrade{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+    }
+    ol{
+        margin-left: 30%;
+    }
+    .sub{
+        margin-left: 10%;
+        margin-right: 35%;
+        padding: 0;
+        text-align: justify;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Calculate Grade</h1><hr>
+        <div class="grade">
+            <h2 style="margin: 0 60px 0 100px;">NameSubject</h2><h2 style="margin: 0 65px 0 40px;">Score</h2><h2>Grade</h2>
+            <h3>No.1<input type="text" class="subject" id="sj1" placeholder="Subject1"><input type="text" class="score" id="sc1"><div class="showgrade" id="shg1">XX</div></h3>
+            <h3>No.2<input type="text" class="subject" id="sj2" placeholder="Subject2"><input type="text" class="score" id="sc2"><div class="showgrade" id="shg2">XX</div></h3>
+            <h3>No.3<input type="text" class="subject" id="sj3" placeholder="Subject3"><input type="text" class="score" id="sc3"><div class="showgrade" id="shg3">XX</div></h3>
+            <h3>No.4<input type="text" class="subject" id="sj4" placeholder="Subject4"><input type="text" class="score" id="sc4"><div class="showgrade" id="shg4">XX</div></h3>
+        </div>
+        <div class="avggrade">
+            <p id="sum">สรุปการคำนวณ GPA จำนวน - - วิชา หน่อยกิจวิชาละ 3 ได้ดังนี้</p>
+            <ol>
+                <li id="sub1" class="sub"></li>
+                <li id="sub2" class="sub"></li>
+                <li id="sub3" class="sub"></li>
+                <li id="sub4" class="sub"></li>
+            </ol>
+            <p>คะแนน GPA ของเทอมนี้</p>
+            <div id="AVG"></div>
+        </div>
+        <hr><button id="savg">OK!</button>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.avggrade').hide();
+            $('input').focus(function(){$(this).css('background','pink');});
+            $('input').focusout(function(){$(this).css('background','white');});
+            $('#sub1').hide();$('#sub2').hide();$('#sub3').hide();$('#sub4').hide();
+            $('#sc1').focusout(function(){
+                var x=document.getElementById("sc1").value;var n=document.getElementById("sj1").value
+                calgrade(x);document.getElementById("shg1").innerHTML=grade;$('#sub1').show();
+                document.getElementById('sub1').innerHTML="วิชา "+n+" คะแนน "+x+" เกรดที่ได้ "+grade;
+            });
+            $('#sc2').focus(function(){
+                var x=document.getElementById("sc2").value;var n=document.getElementById("sj2").value
+                calgrade(x);document.getElementById("shg2").innerHTML=grade;$('#sub2').show();
+                document.getElementById('sub2').innerHTML="วิชา "+n+" คะแนน "+x+" เกรดที่ได้ "+grade;
+            });
+            $('#sc3').focusout(function(){
+                var x=document.getElementById("sc3").value;var n=document.getElementById("sj3").value
+                calgrade(x);document.getElementById("shg3").innerHTML=grade;$('#sub3').show();
+                document.getElementById('sub3').innerHTML="วิชา "+n+" คะแนน "+x+" เกรดที่ได้ "+grade;
+            });
+            $('#sc4').focusout(function(){
+                var x=document.getElementById("sc4").value;var n=document.getElementById("sj4").value
+                calgrade(x);document.getElementById("shg4").innerHTML=grade;$('#sub4').show();
+                document.getElementById('sub4').innerHTML="วิชา "+n+" คะแนน "+x+" เกรดที่ได้ "+grade;
+            });
+            $('#savg').click(function(){
+                $('.grade').toggle();$('.avggrade').toggle();
+                var total,dv,a,b,c,d,a1,b1,c1,d1;
+                var x=document.getElementById("shg1").innerText;dataset(x);a=grade;a1=divide;
+                var x=document.getElementById("shg2").innerText;dataset(x);b=grade;b1=divide;
+                var x=document.getElementById("shg3").innerText;dataset(x);c=grade;c1=divide;
+                var x=document.getElementById("shg4").innerText;dataset(x);d=grade;d1=divide;
+                total=(a+b+c+d);dv=(a1+b1+c1+d1);avg=total/dv;

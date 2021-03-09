@@ -1,0 +1,114 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 4%;
+    }
+
+    .text-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .rside {
+        margin-left: 74%;
+    }
+</style></head>
+
+
+
+<body>
+
+    <a class="center"><img src="https://mis.sci.tsu.ac.th/atomgames24/images/socialpack/%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%AD%E0%B8%B8%E0%B8%9A%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5.jpg" width="100"> </a>
+    <div class="text-center">
+        <h3> ม.อบ. 3.1 ประเภทคำร้องทั่วไป</h3>
+    </div>
+    <div class="text-center">
+        <p>UBU 3.1 General Request Form</p>
+    </div>
+
+    <div>
+        <label>เลขที่รับ</label>
+        <input type="text" name="inpNumber" placeholder="........./25..">
+        <label class="rside">เลขที่รับ</label>
+        <input type="text" name="inpDate" placeholder="...../...../25.....">
+    </div>
+
+    <div>
+        <p>No.</p>
+    </div>
+
+    <div>
+        <p>
+            เรื่อง (โปรดระบุ) Re:(please specify) <input type="text" name="inpRe">
+        </p>
+    </div>
+
+    <div>
+        <p>
+            ข้าพเจ้า <input type="text" name="inpName" placeholder="นาย/นาง/นางสาว I, Mr/Ms ชื่อจริง">
+            นามสกุล <input type="text" name="inpSurname" placeholder="นามสกุล Surname">
+        </p>
+    </div>
+    <div>
+        <p>
+            รหัสประจำตัว <input type="text" name="inpID" placeholder="รหัสประจำตัว">
+            เป็นนักศึกษา มหาวิทยาลัยอุบลราชธานี กำลังศึกษาอยู่ในระดับ
+            <input type="radio" name="Sel" value="Certificate">ประกาศนียบัตร
+            <input type="radio" name="Sel" value="US">ปริญญาตรี
+        </p>
+
+    </div>
+
+    <div>
+        <p>
+            คณะ Faculty of <input type="text" name="inpFac">
+            สาขา Field of study <input type="text" name="inpSakha">
+            เบอร์โทรติดดต่อ <input type="text" name="inpTele">
+        </p>
+    </div>
+
+    <div>
+        <p>
+            ที่อยู่ที่สามารถติดต่อได้สะดวกรวดเร็วที่สุด(ระบุ) contact address (Please specify)
+        </p>
+        <textarea name="TextArea" id="AddressArea" cols="90" rows="10"></textarea>
+    </div>
+
+    <div>
+        <p>
+            มีความประสงค์ would like to ดังนี้ คือ
+        </p>
+        <textarea name="TextArea" id="wouldliketoArea" cols="90" rows="10"></textarea>
+    </div>
+
+    <div>
+        <p>
+            เหตุผล Reason
+        </p>
+        <textarea name="TextArea" id="ReasonArea" cols="90" rows="10"></textarea>
+    </div>
+
+    <div class="rside">
+        <p>
+            ลงชื่อ
+            <input type="text" name="inpSign" id="inpSignStudent"> 
+            ผู้ยื่นคำร้อง (student's signature)
+        </p>
+        <p>
+            ลงชื่อ
+            <input type="text" name="inpSign" id="inpSignParent"> 
+            ผู้ปกครอง (parent's signature)
+        </p>
+    </div>
+
+
+
+
+</body></html>
